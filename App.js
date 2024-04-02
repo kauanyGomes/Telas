@@ -21,10 +21,12 @@
 import React, {Component} from "react";
 import {View, Text, Image} from "react-native"; //importando agora a imagem
 
+
 class App extends Component{ //extendes = herança dos componetes, tudo que um tem passa pro outro
   render() { //renderizar = mostrar na tela, chamando a função
-    let curso = "INFO";
-
+    
+    
+    let curso = 'INFO';
 
     return(
       <View> {/* componete */}
@@ -37,9 +39,10 @@ class App extends Component{ //extendes = herança dos componetes, tudo que um t
         <Text>{curso}</Text> {/*usar variável colocando entre chaves*/ }
 
         {/* para chamar o componente*/}
-        {/* <MinhaImagem> */}
-        {/* passando as prpriedades a largura e a altura */}
-        <MinhaImagem largura={400} altura={400} nome="Imagem 1 "/> {/*propriedades sendo chamadas na outra classe, chamando */}
+        {/* <MinhaImagem> */}          
+        {/* passando as propriedades a largura e a altura */}
+        <MinhaImagem largura={400} altura={400} name="Imagem 1"/> {/*propriedades sendo chamadas na outra classe, chamando */}
+        <MinhaImagem largura={300} altura={200} name="Imagem 2"/>
       </View>
 
     );
@@ -52,12 +55,12 @@ export default App;
 class MinhaImagem extends Component{
   render() {
 
-    let img = "url da imagem "; /*colocando url na variável, para depois chaamala */
+    let img = "url da imagem "; /*colocando url na variável, para depois chama-la */
     return(
       <View>
-        {/* <Image source={{uri: img}} style={{width: 300, height: 300}}/> */}
+        {/* <Image source={{uri: img}} style={{width: 300, height: 300}}/> */}     
 
-        <Image source={{uri: img}} style={{width: this.props.largura, height:this.props.altura}}/> {/*pegando as propriedades de outra classe */}
+        <Image source={{uri: img}} style={{width: this.props.largura, height: this.props.altura}}/> {/*pegando as propriedades de outra classe */}
 
           <Text>{this.props.nome}</Text> {/*dessa propriedade vou chamar o nome */}
 
@@ -65,3 +68,4 @@ class MinhaImagem extends Component{
     );
   }
 }
+
